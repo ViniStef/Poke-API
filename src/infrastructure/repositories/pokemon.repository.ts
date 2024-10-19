@@ -4,7 +4,7 @@ import { IPokemonRepository } from '../../domain/repositories/ipokemon.repositor
 import { Pokemon } from '../../domain/entities/pokemon.entity';
 
 @Injectable()
-export class PokemonApiService implements IPokemonRepository {
+export class PokemonRepository implements IPokemonRepository {
     async findByIdOrName(id?: number, name?: string): Promise<Pokemon> {
         const url = `https://pokeapi.co/api/v2/pokemon/${id ?? name}`;
         const response = await axios.get<Pokemon>(url);
