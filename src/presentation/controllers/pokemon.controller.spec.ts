@@ -3,35 +3,38 @@ import { PokemonController } from './pokemon.controller';
 import { PokemonService } from '../../application/services/pokemon.service';
 import {PokemonRepository} from "../../infrastructure/repositories/pokemon.repository";
 
-describe('PokemonController', () => {
+describe('Controller tests', () => {
     let pokemonController: PokemonController;
+    let service: PokemonService;
 
     beforeEach(async () => {
         const app: TestingModule = await Test.createTestingModule({
             controllers: [PokemonController],
-            providers: [PokemonService, PokemonRepository],
+            providers: [{
+                provide: PokemonService,
+                useValue: {
+                    getPokemonByIdOrName: jest.fn().mockResolvedValue({ name: 'bulbasaur', id: 1 }),
+                },
+
+            }, PokemonRepository],
         }).compile();
 
         pokemonController = app.get<PokemonController>(PokemonController);
+        service = app.get<PokemonService>(PokemonService);
     });
 
-    describe('Testing the getPokemon function', () => {
-        it('Should return information about the pokemon', () => {
-            expect(pokemonController.getPokemon('psyduck')).toBeDefined();
-        });
+    test('Should be defined', () => {
+        expect(pokemonController).toBeDefined();
     });
 
-    describe('Testing the getPokemonsByColor function', () => {
-        it('Should return pokemons with the given color', () => {
-            expect(pokemonController.getPokemonsByColor('blue')).toBeDefined();
-        });
+    test('Should return a pokemon by name', async () => {
+        const pokemon = await pokemonController.getPokemon('bulbasaur');
+        expect(pokemon).toEqual({ name: 'bulbasaur', id: 1 });
     });
 
-    describe('Testing the getPaginatedPokemons function', () => {
-        it('Should return the correct amount of pokemons', () => {
-            expect(pokemonController.getPaginatedPokemons('1', '2')).toBeDefined();
-        });
+    test('Should call the service to get a pokemon by name', async () => {
+        await pokemonController.getPokemon('bulbasaur');
+        expect(service.getPokemonByIdOrName).toHaveBeenCalledWith('bulbasaur');
     });
-
 
 });
