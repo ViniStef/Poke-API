@@ -1,16 +1,16 @@
 ## PokeAPI - Desenvolvida utilizando TypeScript e NestJS
 
-O projeto visou desenvolver uma API para realizar requisições para a API de [Pokémons]("https://pokeapi.co") e retornar 
+O projeto visou desenvolver uma API para realizar requisições para a API de [Pokémons](https://pokeapi.co) e retornar 
 suas devidas respostas. É possível fazer três tipos de requisição:
 
 <ul>
-<li><h1>GET "/pokemon/idOrName" </h1>Obter informações sobre um pokémon através de seu id ou nome.</li>
-<li><h1>GET "/pokemon-color/color" </h1>Obter pokémons que possuem determinada cor, e também algumas informações sobre a cor em si, através do id ou nome da cor.</li>
-<li><h1>GET "/pokemon?limit=20&offset=20" </h1>Obter uma lista de pokémons, podendo decidir quantos retornar através do limit</li>
+<li><h5>GET "/pokemon/idOrName" </h5>Obter informações sobre um pokémon através de seu id ou nome.</li>
+<li><h5>GET "/pokemon-color/color" </h5>Obter pokémons que possuem determinada cor, e também algumas informações sobre a cor em si, através do id ou nome da cor.</li>
+<li><h5>GET "/pokemon?limit=20&offset=20" </h5>Obter uma lista de pokémons, podendo decidir quantos retornar através do limit</li>
 </ul>
-
+<br>
 ## Para executar e testar a API localmente, siga os próximos passos:
-
+<br>
 ## Instale as dependências do projeto
 
 ```bash
@@ -25,7 +25,7 @@ $ npm run start
 
 # watch mode
 $ npm run start:dev
-
+```
 
 ## Testes
 
