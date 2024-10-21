@@ -4,13 +4,15 @@ O projeto visou desenvolver uma API para realizar requisições para a API de [P
 suas devidas respostas. É possível fazer três tipos de requisição:
 
 <ul>
-<li><h5>GET "/pokemon/idOrName" </h5>Obter informações sobre um pokémon através de seu id ou nome.</li>
-<li><h5>GET "/pokemon-color/color" </h5>Obter pokémons que possuem determinada cor, e também algumas informações sobre a cor em si, através do id ou nome da cor.</li>
-<li><h5>GET "/pokemon?limit=20&offset=20" </h5>Obter uma lista de pokémons, podendo decidir quantos retornar através do limit</li>
+<li><h4>GET "/pokemon/{id or name_pokemon}" </h4>Obter informações sobre um pokémon através de seu id ou nome.</li>
+<li><h4>GET "/pokemon-color/{color}" </h4>Obter pokémons que possuem determinada cor, e também algumas informações sobre a cor em si, através do id ou nome da cor.</li>
+<li><h4>GET "/pokemon?limit={number}&offset={number}" </h4>Obter uma lista de pokémons, podendo decidir quantos retornar através do limit</li>
 </ul>
 <br>
+
 ## Para executar e testar a API localmente, siga os próximos passos:
 <br>
+
 ## Instale as dependências do projeto
 
 ```bash
