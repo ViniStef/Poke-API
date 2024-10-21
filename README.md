@@ -42,9 +42,11 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+**É recomendado utilizar o Postman ou Insomnia para facilitar a visualização e testar manualmente as rotas!**
+
 ## Outras Tecnologias
 - Axios para requisições
-- Postman para testar as APIs
+- Postman para visualizar e realizar as chamadas da API
 - Jest para testes unitários e de integração
 
 ## Informações
